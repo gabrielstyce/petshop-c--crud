@@ -1,5 +1,5 @@
 # PetShop CRUD w/ MetroFramework
-Um CRUD de PETSHOP em C# webforms c/ MetroFramework
+Esta é uma solution em c# de um CRUD de petshop em MVC
 
 
 ![demo](https://i.imgur.com/ItGeRuy.png)
