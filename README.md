@@ -1,4 +1,4 @@
-# petshop-c--crud
+# PetShop CRUD w/ MetroFramework
 Um CRUD de PETSHOP em C# webforms c/ MetroFramework
 
 
