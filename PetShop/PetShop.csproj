@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53C2F720-2243-45DC-96B4-C016EDCBE956}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PetShop</RootNamespace>
+    <AssemblyName>PetShop</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Correios.CEP">
+      <HintPath>..\..\..\..\..\Downloads\Correios.CEP.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.16\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BO\Cep.cs" />
+    <Compile Include="BO\ClienteBO.cs" />
+    <Compile Include="BO\ConsultaBO.cs" />
+    <Compile Include="BO\FuncionarioBO.cs" />
+    <Compile Include="BO\PetsBO.cs" />
+    <Compile Include="BO\ServicoBO.cs" />
+    <Compile Include="DAO\ConexaoCorreios.cs" />
+    <Compile Include="DAO\ConsultaDAO.cs" />
+    <Compile Include="DAO\PetsDAO.cs" />
+    <Compile Include="DAO\ServicoDAO.cs" />
+    <Compile Include="FORMS\CLIENTES\BuscarCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORMS\CLIENTES\BuscarCliente.Designer.cs">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\CLIENTES\ClienteMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\CLIENTES\ClienteMenu.Designer.cs">
+      <DependentUpon>ClienteMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\CLIENTES\NewCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORMS\CLIENTES\NewCliente.Designer.cs">
+      <DependentUpon>NewCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\CONSULTA\BuscarConsulta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORMS\CONSULTA\BuscarConsulta.Designer.cs">
+      <DependentUpon>BuscarConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\CONSULTA\NewConsulta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORMS\CONSULTA\NewConsulta.Designer.cs">
+      <DependentUpon>NewConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\CONSULTA\NewServico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORMS\CONSULTA\NewServico.Designer.cs">
+      <DependentUpon>NewServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\FUNCIONARIO\BuscarFuncionario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORMS\FUNCIONARIO\BuscarFuncionario.Designer.cs">
+      <DependentUpon>BuscarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\ClienteDAO.cs" />
+    <Compile Include="DAO\ConexaoBanco.cs" />
+    <Compile Include="DAO\FuncionarioDAO.cs" />
+    <Compile Include="FORMS\FUNCIONARIO\CalcularSalario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORMS\FUNCIONARIO\CalcularSalario.Designer.cs">
+      <DependentUpon>CalcularSalario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\FUNCIONARIO\FuncionarioMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\FUNCIONARIO\FuncionarioMenu.Designer.cs">
+      <DependentUpon>FuncionarioMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\PETS\BuscarPet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORMS\PETS\BuscarPet.Designer.cs">
+      <DependentUpon>BuscarPet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\PETS\NewPet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORMS\PETS\NewPet.Designer.cs">
+      <DependentUpon>NewPet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\PETS\PetsMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\PETS\PetsMenu.Designer.cs">
+      <DependentUpon>PetsMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeInit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeInit.Designer.cs">
+      <DependentUpon>HomeInit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\CONSULTA\ConsultaMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\CONSULTA\ConsultaMenu.Designer.cs">
+      <DependentUpon>ConsultaMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\Atendimento.cs" />
+    <Compile Include="MODEL\Cliente.cs" />
+    <Compile Include="MODEL\Funcionario.cs" />
+    <Compile Include="MODEL\Pessoa.cs" />
+    <Compile Include="MODEL\Pet.cs" />
+    <Compile Include="MODEL\Servico.cs" />
+    <Compile Include="MyMessageBox.cs" />
+    <Compile Include="FORMS\FUNCIONARIO\NewFunc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORMS\FUNCIONARIO\NewFunc.Designer.cs">
+      <DependentUpon>NewFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FORMS\CLIENTES\BuscarCliente.resx">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\CLIENTES\ClienteMenu.resx">
+      <DependentUpon>ClienteMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\CLIENTES\NewCliente.resx">
+      <DependentUpon>NewCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\CONSULTA\BuscarConsulta.resx">
+      <DependentUpon>BuscarConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\CONSULTA\NewConsulta.resx">
+      <DependentUpon>NewConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\CONSULTA\NewServico.resx">
+      <DependentUpon>NewServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\FUNCIONARIO\BuscarFuncionario.resx">
+      <DependentUpon>BuscarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\FUNCIONARIO\CalcularSalario.resx">
+      <DependentUpon>CalcularSalario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\FUNCIONARIO\FuncionarioMenu.resx">
+      <DependentUpon>FuncionarioMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\PETS\BuscarPet.resx">
+      <DependentUpon>BuscarPet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\PETS\NewPet.resx">
+      <DependentUpon>NewPet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\PETS\PetsMenu.resx">
+      <DependentUpon>PetsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeInit.resx">
+      <DependentUpon>HomeInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\CONSULTA\ConsultaMenu.resx">
+      <DependentUpon>ConsultaMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\FUNCIONARIO\NewFunc.resx">
+      <DependentUpon>NewFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\streamline-icon-bird%4048x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\streamline-icon-cat-head%4048x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\streamline-icon-chick%4048x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\streamline-icon-dog-poodle%4048x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\streamline-icon-mouse-body%4048x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\streamline-icon-rabbit-body%4048x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\streamline-icon-web-service-baidu%4048x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\streamline-icon-wild-bird-hunt%4048x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\streamline-icon-wild-bird-owl%4048x48.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
